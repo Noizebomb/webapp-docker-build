@@ -18,7 +18,7 @@ jobs:
     steps:
 #     - uses: actions/checkout@v3
       - name: package springboot app
-        run: mvn -f /home/runner/work/webapp-docker-build/webapp-docker-build/pom.xml package
+        run: mvn -f webapp-docker-build/pom.xml package
       - name: build container and deploy
         run: docker-compose up -d
       - name: push container to docker hub 
