@@ -1,26 +1,16 @@
-name: Build-package-containerize-upload-CI
+name: Build-package-containerize-upload
+on: [push]
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch: 
-  workflow_run:
-    workflows: ["Run Tests"]
-    branches: [main]
-    types: 
-      - completed
-      - requested
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-#     - uses: actions/checkout@v3
-      - name: package springboot app
-        run: mvn -f ./pom.xml package
-      - name: build container and deploy
-        run: docker-compose up -d
-      - name: push container to docker hub 
-        run: docker push noizebomb/springboot-app-2:1.0.4
-       
+      - uses: actions/checkout@v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+      - name: Build with Maven
+        run: mvn package
