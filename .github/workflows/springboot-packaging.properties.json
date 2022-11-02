@@ -1,0 +1,13 @@
+{
+    "name": "springboot-packaging",
+    "description": "springboot app CI starter workflow.",
+    "iconName": "example-icon",
+    "categories": [
+        "Go"
+    ],
+    "filePatterns": [
+        "docker-compose.yml$",
+        "^Dockerfile",
+        ".*\\.md$"
+    ]
+}
