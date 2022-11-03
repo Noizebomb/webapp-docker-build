@@ -21,3 +21,5 @@ jobs:
         run: mvn package
       - name: docker build an image
         run: docker build -t noizebomb/springboot-app-2:0.0.1 .
+      - name: docker push
+        run: docker push noizebomb/springboot-app-2:0.0.1
