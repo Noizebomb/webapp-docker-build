@@ -5,7 +5,7 @@ RUN mkdir /opt/app
 
 WORKDIR /opt/app 
 
-ADD target/example.smallest-0.0.1-SNAPSHOT.jar /opt/app/springboot-app-2.jar
+ADD target/example.smallest-0.0.3-SNAPSHOT.jar /opt/app/springboot-app-2.jar
 
 EXPOSE 8080
 
